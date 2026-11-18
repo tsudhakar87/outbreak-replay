@@ -1,0 +1,21 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+*.egg-info/
+
+# Node
+node_modules/
+dist/
+spikes/web/public/ward.rl
+spikes/web/public/ward.json
+
+# Generated / local
+spikes/toy.relate/
+Users/
+.claude/
+.env
+
+# macOS
+.DS_Store
+data/ward.relate/

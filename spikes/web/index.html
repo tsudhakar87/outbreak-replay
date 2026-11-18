@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Outbreak Replay – Spike 1</title>
+  <style>
+    body { font-family: monospace; padding: 2rem; background: #111; color: #ccc; }
+    h1   { color: #0ff; margin-bottom: 1rem; }
+    .ok  { color: #0f0; }
+    .err { color: #f44; }
+    pre  { background: #1a1a1a; padding: 1rem; border-radius: 4px; white-space: pre-wrap; }
+    button { margin: 0.5rem 0.5rem 0 0; padding: 0.5rem 1rem;
+             background: #0ff; color: #111; border: none; cursor: pointer;
+             font-family: monospace; font-size: 1rem; border-radius: 3px; }
+    button:disabled { opacity: 0.4; cursor: default; }
+    #status { margin-top: 1rem; }
+  </style>
+</head>
+<body>
+  <h1>Outbreak Replay – Spike 1</h1>
+  <div id="status">Starting worker…</div>
+  <button id="btn-hello" disabled>Step A: RETURN 1</button>
+  <button id="btn-count" disabled>Step B: count Person nodes</button>
+  <button id="btn-investigate" disabled>Step C: run investigation</button>
+  <pre id="out"></pre>
+  <script type="module" src="/src/main.ts"></script>
+</body>
+</html>

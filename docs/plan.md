@@ -10,25 +10,27 @@ Build **Outbreak Replay**: a ward exposure investigator for hospital infection-p
 
 The Immuni story is now the creative frame, not the product. Immuni kept no graph by design, so it could never show chains. Hospital badge systems already log contacts, and vendors sell reports of direct and secondary exposure. Outbreak Replay adds what those lists miss: time-ordered chains, backward source finding, and an outbreak you can hand over as a file.
 
-Recommendation: go, if spikes 1, 2 and 7 in "Validate before starting" pass by Nov 18. Budget about 60 hours, Nov 15 to Dec 10.
+Recommendation: go, if spikes 1, 2 and 7 in "Validate before starting" pass by Nov 18. Budget about 60 hours, Nov 15 to Dec 11.
 
 ## Requirements and scorecard
 
 v1 would likely have scored in the low 60s out of 100; v2 targets the mid 80s by fixing the user, the query design, and the judge's first five minutes. Scores are my rough estimates against the published criteria ([Devpost](https://relate.devpost.com/)).
 
-| Criterion | Pts | v1 est. | Main gap in v1 | Fix in v2 | v2 target |
+**Note (Spike 5, Nov 16):** The actual rules list 5 criteria, all weighted equally (20 pts each). Names and weights below are updated from the confirmed rules. The v1/v2 estimates are kept for relative comparison only.
+
+| Criterion (from rules) | Pts | v1 est. | Main gap in v1 | Fix in v2 | v2 target |
 | --- | --- | --- | --- | --- | --- |
-| Relate and connected context | 30 | 20 | Variable-length paths over thousands of repeated contacts could explode or time out. No defined way for judges to explore, which this criterion explicitly scores. | Earliest-arrival expansion queries (see Graph model). Named query file runnable from the CLI. Cypher shown for every answer in the UI. Optional MCP. | 26 |
-| Functionality and completeness | 25 | 15 | Core use case was a visualization with many moving parts. | Core = three answers for one positive case (exposed, source, chain). Each has a test with a known answer. | 21 |
+| Effective use of connected context | 20 | 13 | Variable-length paths over thousands of repeated contacts could explode or time out. No defined way for judges to explore, which this criterion explicitly scores. | Earliest-arrival expansion queries (see Graph model). Named query file runnable from the CLI. Cypher shown for every answer in the UI. MCP for debrief. | 17 |
+| Completeness | 20 | 12 | Core use case was a visualization with many moving parts; no end-to-end path. | Core = three answers for one positive case (exposed, source, chain). Each has a test with a known answer. CI runs named queries. Three ways to run. | 17 |
 | Usefulness | 20 | 10 | No clear user or decision. | Infection-prevention team on a ward with badge data, deciding whom to test and isolate. The demo ends on that list. | 16 |
-| Documentation and reproducibility | 15 | 10 | README promised but not shaped; browser setup friction. | README follows the template exactly. Three ways in: hosted page, `make demo`, plain CLI on the file. | 13 |
-| Creativity | 10 | 7 | Fine. | Immuni frame plus a measured policy comparison on real data. | 8 |
-| **Total** | 100 | **62** |  |  | **84** |
+| Clarity | 20 | 13 | README promised but not shaped; demo not planned. | README follows the template exactly. 2-minute narrated video. Show Cypher on every panel. | 16 |
+| Creativity | 20 | 14 | Fine. | Immuni frame, time-travel deduction game, AI rival on the same evidence, measured policy comparison on real data. | 17 |
+| **Total** | 100 | **62** |  |  | **83** |
 
 **Submission checklist** (do the first two on day one, not at the end):
 
 - [ ] Public GitHub repo created with topics `relate` (required) and `relate-neo4j-hackathon`; confirm it shows at github.com/topics/relate.
-- [ ] `data/ward.relate` committed: single-file store judges can open. Raw source data and a `make rebuild` that regenerates it with fixed seeds.
+- [ ] `data/ward.rl` committed: single-file store judges can open. Raw source data and a `make rebuild` that regenerates it with fixed seeds.
 - [ ] Working code with Relate running: CI runs the test suite and every named query in `queries/` against the committed file on each push.
 - [ ] README in the template's exact sections (draft below).
 - [ ] Devpost description: the use case, and what connects to what (`Person` to `Person` via timed `CONTACT`, cases and runs on top).
@@ -213,7 +215,7 @@ MVP is about 50 hours, stretch 9: roughly 59 of a \~60-hour budget, or about 15 
 
 ## Timeline
 
-Four build weeks, an MVP freeze on Dec 4, and submission on Dec 10, one day before the deadline.
+Four build weeks, an MVP freeze on Dec 4, and submission on Dec 11 (deadline, confirmed by rules — 6 PM PST).
 
 &#91;embedded content: plan · Nov 15 to Dec 10, 2026\]
 

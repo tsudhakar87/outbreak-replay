@@ -1,0 +1,20 @@
+The files in data/raw/ and the derived graph database data/ward.rl are
+based on the SocioPatterns hospital ward dynamic contact network dataset:
+
+  Vanhems P, Barrat A, Cattuto C, Pinton J-F, Khanafer N, et al. (2013)
+  "Estimating Potential Infection Transmission Routes in Hospital Wards
+  Using Wearable Proximity Sensors."
+  PLoS ONE 8(9): e73970.
+  https://doi.org/10.1371/journal.pone.0073970
+
+Dataset source: http://www.sociopatterns.org/datasets/hospital-ward-dynamic-contact-network/
+
+This data is licensed under the Creative Commons Attribution-NonCommercial-
+ShareAlike 3.0 Unported License (CC BY-NC-SA 3.0).
+https://creativecommons.org/licenses/by-nc-sa/3.0/
+
+The derived file data/ward.rl is a transformation of that data and
+carries the same CC BY-NC-SA 3.0 license.
+
+All source code in this repository (outside of data/) is licensed under
+the MIT License; see LICENSE.
